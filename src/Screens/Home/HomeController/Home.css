@@ -1,3 +1,13 @@
-.container {
-    margin-top: 130;
+body {
+  background-color: black !important;
+}
+
+.container{    
+    margin-top: 150px;
+}
+
+.info {
+  text-align: center;
+  font-size: 39px;
+  color: #ed145b;
 }

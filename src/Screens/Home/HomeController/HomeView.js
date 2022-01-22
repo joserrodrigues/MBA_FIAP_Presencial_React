@@ -1,12 +1,12 @@
 import './Home.css'
 
-const HomeView = (props) => {
+const HomeView = ({ info }) => {
 
     //Utilizando o props info que recebemos na inicialização do componente
     return (
-        <>
-            <div>Count {props.info}</div>            
-        </>
+        <div className='container'>
+            <div className='info'>Count {info}</div>            
+        </div>
     )
 }
 
