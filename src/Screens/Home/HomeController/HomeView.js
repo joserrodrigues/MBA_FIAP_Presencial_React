@@ -1,13 +1,28 @@
+import * as React from 'react';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+
 import './Home.css'
 
-const HomeView = ({ info }) => {
+export default function HomeView({ info, person }) {
 
-    //Utilizando o props info que recebemos na inicialização do componente
+    let name = "";
+    if (person){
+        name = person.persons[0].firstName + " " + person.persons[0].lastName
+    }
     return (
-        <div className='container'>
-            <div className='info'>Count {info}</div>            
-        </div>
-    )
+        <Grid
+            container
+            spacing={0}
+            direction="column"
+            justifyContent="center"
+            alignItems="center">
+            <Typography gutterBottom variant="h3" className="text">
+                Person {name}
+            </Typography>                
+            <Typography gutterBottom variant="h3" className="text">
+                Info {info}
+            </Typography>
+        </Grid>
+    );
 }
-
-export default HomeView;

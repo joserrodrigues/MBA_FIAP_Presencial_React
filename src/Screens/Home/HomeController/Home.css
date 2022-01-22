@@ -1,13 +1,17 @@
-body {
+html, body {
   background-color: black !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.container{    
-    margin-top: 150px;
+#root {
+  height: 100%;
+  display: flex;
 }
 
-.info {
-  text-align: center;
-  font-size: 39px;
-  color: #ed145b;
+.text{
+    text-align: center;
+    font-size: 28px;
+    color: #ed145b;
 }

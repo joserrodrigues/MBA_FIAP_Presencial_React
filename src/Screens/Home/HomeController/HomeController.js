@@ -1,24 +1,32 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import useAPI from '../../../Services/APIs/Common/useAPI';
+import persons from '../../../Services/APIs/Persons/persons';
 import HomeView from './HomeView';
 
-export default class HomeController extends Component {
-    constructor(){
-        super();
-        this.state = {
-            count: 0,
-        };
-        
-    }
+export default function HomeController () {
 
-    componentDidMount(){
-        setInterval(() => {
-            this.setState({
-                count: this.state.count + 1
-            })
-        }, 1000);
-    }
+    const [count, setCount] = useState(0);
+    const getPersonsGetAPI = useAPI(persons.getPersons);
+    const getPersonsPostAPI = useAPI(persons.getPersonsPost);
 
-    render() {
-        return <HomeView info={this.state.count} />
-    }
+    useEffect(() => {
+        const timer = setInterval(() => {
+            //functional update
+            setCount((count) => count + 1);
+        }, 3000);  
+
+        getPersonsGetAPI.request(1);
+        getPersonsPostAPI.request({
+            title: 'L',
+        });
+
+        return () => {
+            clearInterval(timer);
+        }
+    }, []);
+
+    // console.log(getPersonsGetAPI.data);
+    // console.log(getPersonsPostAPI.data);
+    
+    return <HomeView info={count} person={getPersonsGetAPI.data} />    
 }
