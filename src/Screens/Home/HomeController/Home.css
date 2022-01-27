@@ -5,13 +5,52 @@ html, body {
   padding: 0;
 }
 
-#root {
-  height: 100%;
-  display: flex;
-}
 
 .text{
     text-align: center;
     font-size: 28px;
     color: #ed145b;
+}
+
+.link{
+  color: aqua;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.divTopButton .MuiPaper-root{
+  background-color: black !important;
+}
+
+
+.MuiInput-underline:after{
+  border-bottom: 2px solid #ed145b !important;
+}
+
+.MuiSelect-icon{
+  color: #ed145b !important;
+}
+
+.MuiToolbar-root{
+  color: #ed145b !important;
+}
+
+.MuiTypography-root{
+  color: #ed145b !important;
+}
+
+.MuiIconButton-root{
+  color: #ed145b !important;
+}
+
+.MuiListItem-root{
+ color: #ed145b !important;
+}
+
+.MuiPopover-paper{
+  width: 100px;;
+}
+
+.divTopButton{
+  width: 90%;
 }

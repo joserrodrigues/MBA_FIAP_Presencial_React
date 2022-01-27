@@ -1,0 +1,14 @@
+.box{    
+    text-align: center;
+}
+
+.text{
+    text-align: center;
+    font-size: 28px;
+    color: #ed145b;
+}
+.maps{
+    position: relative;
+    width: 48% !important;
+    height: 100% !important;
+}

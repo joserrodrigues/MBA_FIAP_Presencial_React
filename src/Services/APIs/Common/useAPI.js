@@ -17,10 +17,29 @@ export default (apiFunc) => {
         }
     };
 
+    const requestPromise = async (...args) => {
+        return new Promise((resolve, reject) => {            
+            try {
+                console.log(args);
+                apiFunc(...args).then(result => {
+                    resolve(result.data);
+                })
+                .catch(error => {    
+                    console.log(error.response);                
+                    console.log(error.message);                
+                    reject(error)
+                });                
+            } catch (err) {
+                reject(err.message || "Unexpected Error!")
+            }
+        })
+    };    
+
     return {
         data,
         error,
         loading,
-        request
+        request,
+        requestPromise
     };
 };
