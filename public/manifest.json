@@ -3,11 +3,11 @@
   "name": "RH React",
   "lang": "pt",
   "description": "Aplicativo de RH",
-  "start_url": "/index.js",
+  "start_url": "/",
   "background_color": "#000000",
   "theme_color": "#000000",
   "dir": "ltr",
-  "id": "/index.js",
+  "id": "/",
   "display": "fullscreen",
   "orientation": "portrait",
   "icons": [
